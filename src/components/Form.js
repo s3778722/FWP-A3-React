@@ -93,7 +93,9 @@ const Form = () => {
         )}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Name</label>
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
             <input
               type="text"
               className="form-control"
@@ -106,7 +108,9 @@ const Form = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Email address</label>
+            <label htmlFor="email" className="form-label">
+              Email address
+            </label>
             <input
               type="email"
               className="form-control"
@@ -119,7 +123,9 @@ const Form = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Subject</label>
+            <label htmlFor="subject" className="form-label">
+              Subject
+            </label>
             <input
               type="text"
               className="form-control"
@@ -132,7 +138,9 @@ const Form = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Message</label>
+            <label htmlFor="message" className="form-label">
+              Message
+            </label>
             <textarea
               className="form-control"
               id="message"
@@ -146,7 +154,7 @@ const Form = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button htmlFor="submit" type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
