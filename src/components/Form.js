@@ -71,7 +71,7 @@ const Form = () => {
       alert(message);
       let newSubmission = [...submission, trimmedFields];
       //set the current user on local storage
-      //localStorage.setItem("data", JSON.stringify(newSubmission));
+      localStorage.setItem("data", JSON.stringify(newSubmission));
       setSubmissions(newSubmission);
 
       const inputFields = { ...fields };
