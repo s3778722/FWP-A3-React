@@ -4,7 +4,7 @@ import Form from "./components/Form";
 //before each test
 beforeEach(() => {
   //render the form component
-  const formApp = render(<Form />);
+  const form = render(<Form />);
 });
 
 //defined the window.alert as a jest spy because an alert message box is used in the form component

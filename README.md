@@ -1,5 +1,6 @@
-# Notes 
-Assignment 3 for Further Web Programming. All tasks from Task a to f are fully implemented. Student Id: s3778722
+# Notes
+
+Assignment 3 for Further Web Programming. All tasks from **Task a to f are fully implemented**. Student Id: s3778722
 
 # Getting Started with Create React App
 
