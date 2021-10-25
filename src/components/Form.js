@@ -8,7 +8,7 @@ const Form = () => {
     message: "",
   });
   const [submission, setSubmissions] = useState(
-    localStorage.getItem("data") || []
+    JSON.parse(localStorage.getItem("data")) || []
   );
   const [alertMessage, setAlertMessage] = useState(null);
 
@@ -32,6 +32,7 @@ const Form = () => {
   };
 
   const emailRegex = /^[a-z]+\.[a-z]+@[a-z]+\.com$/;
+  const subjectRegex = /^[A-Z]+$/;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +49,21 @@ const Form = () => {
       const emptyFieldsMessage = "Please fill in all the necessary fields";
       setAlertMessage(emptyFieldsMessage);
       alert(emptyFieldsMessage);
+    } else if (!emailRegex.test(trimmedFields.email)) {
+      const emailFieldsMessage =
+        "Invalid email address format (No uppercase letters, no numbers etc..). An example of a correct format: abc.def@abc.com";
+      setAlertMessage(emailFieldsMessage);
+      alert(emailFieldsMessage);
+    } else if (!subjectRegex.test(trimmedFields.subject)) {
+      const subjectFieldsMessage =
+        "Subject must be filled in UPPER CASE LETTERS only (No numbers, special characters and lower case letters etc..)";
+      setAlertMessage(subjectFieldsMessage);
+      alert(subjectFieldsMessage);
+    } else if (trimmedFields.message.length > 200) {
+      const messageFieldsMessage =
+        "Max length of the message is 200 characters.";
+      setAlertMessage(messageFieldsMessage);
+      alert(messageFieldsMessage);
     } else {
       //login is verified
       const message = "Validation is successful, data is saved";
@@ -55,7 +71,7 @@ const Form = () => {
       alert(message);
       let newSubmission = [...submission, trimmedFields];
       //set the current user on local storage
-      localStorage.setItem("data", JSON.stringify(newSubmission));
+      //localStorage.setItem("data", JSON.stringify(newSubmission));
       setSubmissions(newSubmission);
 
       const inputFields = { ...fields };
