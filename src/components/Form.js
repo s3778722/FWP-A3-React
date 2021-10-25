@@ -32,7 +32,7 @@ const Form = () => {
   };
 
   const emailRegex = /^[a-z]+\.[a-z]+@[a-z]+\.com$/;
-  const subjectRegex = /^[A-Z]+$/;
+  const subjectRegex = /^[A-Z ]+$/;
 
   const handleSubmit = (e) => {
     e.preventDefault();
