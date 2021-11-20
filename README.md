@@ -1,6 +1,7 @@
 # Notes
 
 Assignment 3 for Further Web Programming. All tasks from **Task a to f are fully implemented**. Student Id: s3778722
+* Unit tests, local storage and form validation
 
 # Getting Started with Create React App
 
